@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/wordle-app",
+  "sourceRoot": "apps/wordle-app/src",
+  "prefix": "perfect-wordle",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/wordle-app",
+        "index": "apps/wordle-app/src/index.html",
+        "main": "apps/wordle-app/src/main.ts",
+        "polyfills": "apps/wordle-app/src/polyfills.ts",
+        "tsConfig": "apps/wordle-app/tsconfig.app.json",
+        "assets": [
+          "apps/wordle-app/src/favicon.ico",
+          "apps/wordle-app/src/assets"
+        ],
+        "styles": ["apps/wordle-app/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/wordle-app/src/environments/environment.ts",
+              "with": "apps/wordle-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "wordle-app:build:production"
+        },
+        "development": {
+          "browserTarget": "wordle-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "wordle-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/wordle-app/src/**/*.ts",
+          "apps/wordle-app/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/wordle-app"],
+      "options": {
+        "jestConfig": "apps/wordle-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

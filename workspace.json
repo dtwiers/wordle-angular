@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "wordle-app": "apps/wordle-app",
+    "wordle-app-e2e": "apps/wordle-app-e2e"
+  }
 }
