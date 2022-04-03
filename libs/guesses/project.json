@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/guesses",
+  "sourceRoot": "libs/guesses/src",
+  "prefix": "perfect-wordle",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/guesses"],
+      "options": {
+        "jestConfig": "libs/guesses/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/guesses/src/**/*.ts",
+          "libs/guesses/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

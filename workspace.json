@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "guesses": "libs/guesses",
     "wordle-app": "apps/wordle-app",
     "wordle-app-e2e": "apps/wordle-app-e2e"
   }
