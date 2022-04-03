@@ -11,7 +11,7 @@ type WordObject = {
   providedIn: 'root',
 })
 export class WordService {
-  private root = 'https://api.datamuse.com';
+  private root = 'https://api.datamuse.com/words';
 
   constructor(private http: HttpClient) {}
 
@@ -36,8 +36,7 @@ export class WordService {
         ),
         map((result) => {
           if (!result.length || !result[0]) {
-            return ''
-            // throw new Error('Could not find any words');
+            throw new Error('Could not find any words');
           }
           if (seed) {
             return result[0].word;
