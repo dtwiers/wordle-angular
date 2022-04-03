@@ -3,5 +3,5 @@
  */
 export interface GuessesEntity {
   id: string | number; // Primary ID
-  name: string;
+  value: string;
 }

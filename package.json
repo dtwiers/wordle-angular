@@ -17,6 +17,7 @@
     "@angular/cli": "~13.2.0",
     "@angular/compiler-cli": "~13.2.0",
     "@angular/language-service": "~13.2.0",
+    "@hirez_io/observer-spy": "^2.2.0",
     "@ngrx/schematics": "~13.0.0",
     "@ngrx/store-devtools": "~13.0.0",
     "@nrwl/angular": "^13.9.6",
