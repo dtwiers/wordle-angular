@@ -42,8 +42,18 @@ export class WordService {
             return result[0].word;
           }
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return result[Math.floor(Math.random() * result.length)]!.word
+          return result[Math.floor(Math.random() * result.length)]!.word;
         })
       );
+  }
+
+  validateWord(guess: string): Observable<boolean> {
+    return this.http
+      .get<WordObject[]>(this.root, {
+        params: {
+          sp: guess,
+        },
+      })
+      .pipe(map((result) => result.some((value) => value.word === guess)));
   }
 }
