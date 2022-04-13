@@ -1,3 +1,5 @@
+import { Result } from "@brandingbrand/standard-result";
+
 export enum MatchType {
   None = 0,
   Partial = 1,
@@ -10,6 +12,5 @@ export type MatchResponseCharacter = {
 
 export type MatchResponse = MatchResponseCharacter[];
 
-
-
-export type Game = MatchResponse[];
+export type GameRow = Result<MatchResponse, string>;
+export type Game = GameRow[];
